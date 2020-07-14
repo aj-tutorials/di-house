@@ -2,6 +2,7 @@ package di.guice.providerpattern;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
+import com.google.inject.Singleton;
 import com.google.inject.name.Named;
 
 public class AppModule extends AbstractModule {
@@ -17,6 +18,7 @@ public class AppModule extends AbstractModule {
 
   @Provides
   @Named("Kitchen")
+  @Singleton
   public Sink provideKitchenSink() {
     return new KitchenSink();
   }
