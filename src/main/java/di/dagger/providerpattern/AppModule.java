@@ -1,14 +1,12 @@
 package di.dagger.providerpattern;
 
-import com.google.inject.AbstractModule;
-import com.google.inject.Provides;
-import com.google.inject.Singleton;
-import com.google.inject.name.Named;
+import dagger.Module;
+import dagger.Provides;
+import javax.inject.Named;
+import javax.inject.Singleton;
 
-public class AppModule extends AbstractModule {
-
-  @Override
-  public void configure() { }
+@Module
+public class AppModule {
 
   @Provides
   @Named("Bathroom")
