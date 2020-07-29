@@ -1,12 +1,12 @@
 package di.dagger.fieldinjection;
 
-import com.google.inject.Inject;
+import javax.inject.Inject;
 
 public class House {
   @Inject
-  private Bathroom bathroom;
+  Bathroom bathroom;
   @Inject
-  private Kitchen kitchen;
+  Kitchen kitchen;
 
   public void print() {
     System.out.println(bathroom);

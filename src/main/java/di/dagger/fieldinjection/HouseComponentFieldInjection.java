@@ -1,8 +1,8 @@
-package di.dagger.constuctorinjection;
+package di.dagger.fieldinjection;
 
 import dagger.Component;
 
 @Component(modules = AppModule.class)
-public interface HouseComponent {
+public interface HouseComponentFieldInjection {
   House buildHouse();
 }

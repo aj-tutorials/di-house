@@ -1,11 +1,11 @@
 package di.dagger.fieldinjection;
 
-import com.google.inject.Inject;
-import com.google.inject.name.Named;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 public class Kitchen {
   @Inject @Named("Kitchen")
-  private Sink sink;
+  Sink sink;
   @Inject
-  private Stove stove;
+  Stove stove;
 }

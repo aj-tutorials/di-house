@@ -1,13 +1,28 @@
 package di.dagger.fieldinjection;
 
-import com.google.inject.AbstractModule;
-import com.google.inject.name.Names;
+import dagger.Module;
+import dagger.Provides;
+import javax.inject.Named;
+import javax.inject.Singleton;
 
-public class AppModule extends AbstractModule {
+@Module
+public class AppModule {
 
-  @Override
-  public void configure() {
-    bind(Sink.class).annotatedWith(Names.named("Kitchen")).to(KitchenSink.class);
-    bind(Sink.class).annotatedWith(Names.named("Bathroom")).to(BathroomSink.class);
+  @Provides
+  @Singleton
+  public House provideHouse() {
+    return new House();
+  }
+
+  @Provides
+  @Named("Bathroom")
+  public Sink provideBathroomSink() {
+    return new BathroomSink();
+  }
+
+  @Provides
+  @Named("Kitchen")
+  public Sink provideKitchenSink() {
+    return new KitchenSink();
   }
 }
